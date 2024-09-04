@@ -7,13 +7,11 @@ class Vertex {
     int value;
     boolean visited;
     List<Vertex> neighbors;
-    Vertex parent;
 
     public Vertex(int value) {
         this.value = value;
         this.visited = false;
         this.neighbors = new ArrayList<>();
-        this.parent = null;
     }
 
     public boolean isVisited() {
@@ -59,12 +57,10 @@ class BFS {
             for (Vertex w : v.getNeighbors()) {
                 if (!w.isVisited()) {
                     w.setVisited(true);
-                    w.parent = v;
                     queue.add(w);
                 }
             }
         }
-
         return null;
     }
 }
