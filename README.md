@@ -1,4 +1,4 @@
-# Java & C++ Algorithm
+# Java Algorithm Implementation Practice
 
 ## BFS
 
