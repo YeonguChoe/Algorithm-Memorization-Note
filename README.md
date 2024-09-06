@@ -18,11 +18,13 @@ void dfs(Node *start, set<Node *> &visited)
     stack<Node *> S;
     S.push(start);
 
+    // 스택에서 한개씩 빼서 관찰
     while (!S.empty())
     {
         Node *v = S.top();
         S.pop();
 
+        // 만약에 방문한적이 있는 노드가 아니라면, 해당 노드를 방문했다고 표시하고, 인접한 노드들을 스택에 추가
         if (find(visited.begin(), visited.end(), v) == visited.end())
         {
             visited.insert(v);
