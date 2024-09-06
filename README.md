@@ -2,6 +2,40 @@
 
 ### DFS
 - Type: Tree, 2D Matrix, Graph
+- 방문 노드 표시 필요
+
+### Iterative DFS
+```cpp
+struct Node
+{
+    int value;
+    vector<Node *> adjacent_nodes;
+};
+
+void dfs(Node *start, set<Node *> &visited)
+{
+
+    stack<Node *> S;
+    S.push(start);
+
+    while (!S.empty())
+    {
+        Node *v = S.top();
+        S.pop();
+
+        if (find(visited.begin(), visited.end(), v) == visited.end())
+        {
+            visited.insert(v);
+            for (Node *w : v->adjacent_nodes)
+            {
+                S.push(w);
+            }
+        }
+    }
+}
+```
+
+
 - Implementation type: Stack DFS, Recursive DFS
 
 ### Stack DFS
