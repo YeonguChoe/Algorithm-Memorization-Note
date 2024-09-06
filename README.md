@@ -10,6 +10,7 @@
 
 
 ### Backtracking
+- 내용: 노드를 붙였다 뗏다가를 반복함.
 - Usage: Permutation, Combination
 
 #### From LC 39
