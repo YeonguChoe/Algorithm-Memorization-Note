@@ -4,6 +4,7 @@
 - Type: Tree, 2D Matrix, Graph
 - 방문 노드 표시 필요
 
+### DFS type based on Implementation
 ### Iterative DFS
 ```cpp
 struct Node
@@ -37,8 +38,7 @@ void dfs(Node *start, set<Node *> &visited)
 }
 ```
 
-
-- Implementation type: Stack DFS, Recursive DFS
+### Recursive DFS
 
 ### Stack DFS
 
