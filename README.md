@@ -1,11 +1,12 @@
 # C++ Algorithm Memorizaiton Note
 
 ### Depth First Search
-Type: Tree, 2D Matrix, Graph
+- Type: Tree, 2D Matrix, Graph
 
 
 
 ### Backtracking
+- Usage: Permutation, Combination
 
 #### From LC 39
 
