@@ -1,7 +1,11 @@
-# C++ Algorithm Memorizaiton Note
+# 알고리즘 암기 노트
 
-### Depth First Search
+### DFS
 - Type: Tree, 2D Matrix, Graph
+- Implementation type: Stack DFS, Recursive DFS
+
+### Stack DFS
+
 
 
 
