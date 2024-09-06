@@ -1,67 +1,69 @@
-# Java Algorithm Implementation Practice
+# C++ Algorithm Memorizaiton Note
 
-## BFS
+### Backtracking
 
-```java
-class Vertex {
-    int value;
-    boolean visited;
-    List<Vertex> neighbors;
-
-    public Vertex(int value) {
-        this.value = value;
-        this.visited = false;
-        this.neighbors = new ArrayList<>();
-    }
-
-    public boolean isVisited() {
-        return this.visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
-    }
-
-    public int getValue() {
-        return this.value;
-    }
-
-    public List<Vertex> getNeighbors() {
-        return this.neighbors;
-    }
-
-    public Vertex addNeighbor(int value) {
-        Vertex neighbor = new Vertex(value);
-        this.neighbors.add(neighbor);
-        return neighbor;
-    }
+#### From LC 39
+```
+void backtrack(int current_sum, int goal, int current_start_of_candidate,
+  vector < int > & combination, vector < int > & candidate,
+  vector < vector < int >> & result) {
+  // 합이 정답에 도달하면, 해당 조합을 답에 추가
+  if (current_sum == goal) {
+    result.push_back(combination);
+    return;
+  }
+  // 합이 정답을 넘어서면, 더이상 들어가지 않음.
+  if (current_sum > goal) {
+    return;
+  }
+  // candidate을 combination에 붙였다가 뗏다가 하면서, 함수 실행
+  for (int i = current_start_of_candidate; i < candidate.size(); ++i) {
+    combination.push_back(candidate[i]);
+    backtrack(current_sum + candidate[i], goal, i, combination,
+      candidate, result);
+    combination.pop_back();
+  }
 }
+vector < vector < int >> combinationSum(vector < int > & candidates, int target) {
+  vector < vector < int >> result;
+  vector < int > combination;
+  backtrack(0, target, 0, combination, candidates, result);
+  return result;
+}
+```
 
-class BFS {
-    public static Vertex search(int goal, Vertex root) {
-        if (root == null) {
-            return null;
-        }
+#### From LC 2028
+```
+// Time complexity: O(6^n)
+// Space complexity: O(n)
 
-        Queue<Vertex> queue = new LinkedList<>();
-        root.setVisited(true);
-        queue.add(root);
-
-        while (!queue.isEmpty()) {
-            Vertex v = queue.remove();
-
-            if (v.getValue() == goal) {
-                return v;
-            }
-
-            for (Vertex w : v.getNeighbors()) {
-                if (!w.isVisited()) {
-                    w.setVisited(true);
-                    queue.add(w);
-                }
-            }
-        }
-        return null;
+bool backtracking(int current_sum, int goal, int remaining_n,
+                  vector<int>& combination, vector<int>& answer) {
+    // 나머지 횟수가 0이고 합이 goal에 도달한 경우.
+    if (remaining_n == 0 and current_sum == goal) {
+        answer = combination;
+        return true;
     }
+    // 나머지 횟수만 다 소진한 경우.
+    if (remaining_n == 0) {
+        return false;
+    }
+
+    // 나머지 횟수가 남았지만, 이미 합이 초과한 경우
+    if (current_sum > goal) {
+        return false;
+    }
+
+    // 값을 붙였다가 뗏다가 하면서 백트래킹
+    for (int i = 6; i > 0; --i) {
+        combination.push_back(i);
+        if (backtracking(current_sum + i, goal, remaining_n - 1,
+                         combination, answer)) {
+            return true;
+        }
+        combination.pop_back();
+    }
+
+    return false;
 }
 ```
