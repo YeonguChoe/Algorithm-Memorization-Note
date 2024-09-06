@@ -1,5 +1,7 @@
 # 알고리즘 암기 노트
 
+- Recursion == Stack + Iteration ???
+
 ### DFS
 - Type: Tree, 2D Matrix, Graph
 - 방문 노드 표시 필요
