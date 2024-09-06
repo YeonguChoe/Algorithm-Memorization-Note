@@ -1,5 +1,10 @@
 # C++ Algorithm Memorizaiton Note
 
+### Depth First Search
+Type: Tree, 2D Matrix, Graph
+
+
+
 ### Backtracking
 
 #### From LC 39
