@@ -85,6 +85,9 @@ vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
 #### From LC 79 Word Search
 
 ```cpp
+// Time complexity: O(row*column*(4^길이))
+// Space complexity: O(길이)
+
 bool backtrack(vector<vector<char>> &board, const string &word,
                int current_row, int current_column, int index)
 {
