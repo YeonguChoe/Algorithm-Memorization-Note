@@ -1,6 +1,7 @@
 # 알고리즘 암기 노트
 
 - Recursion == Stack + Iteration ???
+- Graph Algorithm 분류
 
 ### DFS
 - Type: Tree, 2D Matrix, Graph
