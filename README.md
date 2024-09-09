@@ -7,6 +7,8 @@
 - Type: Tree, 2D Matrix, Graph
 - 방문 노드 표시 필요
 
+### 2D 행렬 DFS
+
 ### DFS type based on Implementation
 ### Iterative DFS
 ```cpp
